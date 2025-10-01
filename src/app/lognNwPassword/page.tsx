@@ -67,14 +67,7 @@ export const logNewPassword = () => {
             } else {
                 toast.error("Something went wrong")
             }
-            //     if (data.statusMsg === "success") {
-            //     toast.success(data.message, {
-            //         duration: 1000,
-            //         position: 'top-center'
-            //     })
-
-            //     router.push("/")
-            // }
+            
 
 
         } catch (error) {
