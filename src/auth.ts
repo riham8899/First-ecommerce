@@ -91,7 +91,7 @@ export const authOptions: AuthOptions = {
 
             if(token){
                 session.user =token?.user
-                session.accessToken = token?.token as string
+                session.accessToken = token?.accessToken  as string
             }
 
 
