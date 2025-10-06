@@ -8,9 +8,9 @@ export async function middleware(request: NextRequest) {
     const token = await getToken({ req: request })
     const { pathname } = request.nextUrl
 
-    const authPage = ["/login", "/register"]
+    const authPage = ["/login", "/register","/forgetpassword", "/VerifyResetCode", "/lognNwPassword"]
 
-    const routes = ["/", "/cart", "/payment","/productDetails", "/catogries", "/brand" ,"/forgetpassword","/allorders" ,"/VerifyResetCode" ,"/lognNwPassword"]
+    const routes = ["/", "/cart", "/payment","/productDetails", "/catogries", "/brand" ,"/allorders" ]
 
 
 
