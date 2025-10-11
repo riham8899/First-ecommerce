@@ -37,7 +37,7 @@ export async function AddToCart(id: string) {
 
     
 
-    console.log(data)
+    console.log(data,'line 40');
 
 
 

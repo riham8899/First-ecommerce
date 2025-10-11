@@ -30,7 +30,7 @@ const CartContextProvidor = ({ children }: { children: React.ReactNode }) => {
         try {
 
             const data = await AddToCart(id)
-
+            console.log(data, 'line 33');
 
             getUserCart()
             // console.log(data);
