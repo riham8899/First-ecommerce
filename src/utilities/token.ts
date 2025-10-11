@@ -19,7 +19,7 @@ export async function getMyToken() {
 
     })
 
-    console.log(token)
+    console.log(token,"Test at line 22");
 
     
 
