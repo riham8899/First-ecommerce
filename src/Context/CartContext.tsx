@@ -127,8 +127,9 @@ const CartContextProvidor = ({ children }: { children: React.ReactNode }) => {
             setNumOFCart(data.numOfCartItems),
                 setTotalOfCartPrice(data.data.totalCartPrice),
                 setProduct(data.data.products),
-                setIsLoading(false)
+            
             setICartId(data.cartId)
+                setIsLoading(false)
 
 
 
@@ -136,6 +137,7 @@ const CartContextProvidor = ({ children }: { children: React.ReactNode }) => {
 
         } catch (error) {
             console.log(error);
+            setIsLoading(false)
 
 
         }
@@ -151,12 +153,12 @@ const CartContextProvidor = ({ children }: { children: React.ReactNode }) => {
     }, [])
 
     function afterPayment() {
-        
+
         setICartId("")
 
         setNumOFCart(0),
-        setTotalOfCartPrice(0),
-        setProduct([])
+            setTotalOfCartPrice(0),
+            setProduct([])
 
     }
 
