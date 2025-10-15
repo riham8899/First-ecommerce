@@ -4,7 +4,7 @@ import { clearCartAction } from '@/CartAction/clearCart'
 import { getUserCartAction } from '@/CartAction/getUserCart'
 import { removeCartItemAction } from '@/CartAction/removeCartItems'
 import { updateCartAction } from '@/CartAction/updateCart'
-import { Cart } from '@/types/cart.type'
+import { Cart, ProductCart } from '@/types/cart.type'
 import React, { createContext, useEffect, useState } from 'react'
 
 
@@ -18,9 +18,9 @@ export const cartContext = createContext({})
 const CartContextProvidor = ({ children }: { children: React.ReactNode }) => {
 
 
-    const [numOfCart, setNumOFCart] = useState(0)
-    const [totalOfCartPrice, setTotalOfCartPrice] = useState(0)
-    const [product, setProduct] = useState([])
+    const [numOfCart, setNumOFCart] = useState(0);
+    const [totalOfCartPrice, setTotalOfCartPrice] = useState(0);
+    const [product, setProduct] = useState <ProductCart[]>([]);
     const [isLoading, setIsLoading] = useState(false)
     const [cartId, setICartId] = useState("")
 
@@ -119,6 +119,7 @@ const CartContextProvidor = ({ children }: { children: React.ReactNode }) => {
     async function getUserCart() {
         setIsLoading(true)
 
+
         try {
 
             const data: Cart = await getUserCartAction()
@@ -127,8 +128,8 @@ const CartContextProvidor = ({ children }: { children: React.ReactNode }) => {
             setNumOFCart(data.numOfCartItems),
                 setTotalOfCartPrice(data.data.totalCartPrice),
                 setProduct(data.data.products),
-            
-            setICartId(data.cartId)
+
+                setICartId(data.cartId),
                 setIsLoading(false)
 
 
